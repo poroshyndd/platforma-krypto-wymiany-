@@ -1,0 +1,21 @@
+.sidebar {
+  width: 200px;
+  background: #181a23;
+  padding: 2rem 1rem;
+}
+.sidebar h1 {
+  margin: 0 0 2rem;
+  color: #55ff99;
+  line-height: 1.2;
+  font-size: 1.5rem;
+}
+.sidebar nav a {
+  display: block;
+  color: #55ff99;
+  text-decoration: none;
+  margin: 0.5rem 0;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  color: #a0ffa0;
+}

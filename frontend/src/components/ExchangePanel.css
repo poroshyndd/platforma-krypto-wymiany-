@@ -1,0 +1,36 @@
+.exchange-panel {
+  background: #192130;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin: 16px;
+}
+.exchange-panel label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #ccc;
+}
+.exchange-panel input {
+  margin-top: 4px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  background: #1e2638;
+  color: #fff;
+  width: 100px;
+}
+.swap-arrows {
+  color: #66ff99;
+  font-size: 20px;
+}
+.swap-btn {
+  background: #66ff99;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}

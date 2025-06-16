@@ -1,0 +1,66 @@
+/* Сбрасываем для всего документа */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #1f2029; /* тёмный базовый фон */
+}
+
+/* Ваш корневой Layout */
+.layout {
+  display: flex;
+  height: 100%;
+  background: #1f2029; /* должен совпадать с html/body */
+}
+
+/* Боковая панель */
+.sidebar {
+  background: #181a23; /* чуть затемнённый, чем main-area */
+  padding: 1rem;
+}
+
+/* Основная область */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1f2029; /* ровно тот же, что у body */
+  margin: 0;    /* никаких внешних отступов */
+  padding: 0;   /* только внутренние у .layout-content */
+}
+
+/* Шапка (Topbar) */
+.topbar {
+  background: #1f2029 !important;
+  box-shadow: none !important;      /* убираем тень, если она была */
+  border-bottom: none !important;   /* убираем рамку снизу */
+}
+
+/* Контент-обёртка */
+.layout-content {
+  flex: 1;
+  background: #1f2029; /* единый фон */
+  padding: 2rem;       /* только внутренний отступ */
+  margin: 0;           /* никаких внешних */
+}
+
+/* Страница Swap (если у вас есть контейнер с классом) */
+.swap-page {
+  background: transparent; /* фон родителя уже #1f2029 */
+  padding: 0; 
+}
+
+/* Собственно «карточка» внутри Swap */
+.swap-box {
+  background: #25273c; /* тёмно-фиолетовый блок вокруг инпутов */
+  padding: 1rem;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* Кнопки и прочие элементы тоже лучше явно перекрасить: */
+button, .btn {
+  box-shadow: none !important;
+}
+

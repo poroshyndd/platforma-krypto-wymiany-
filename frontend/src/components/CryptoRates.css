@@ -1,0 +1,57 @@
+/* src/components/CryptoRates.css */
+.crypto-page {
+  padding: 24px;
+  color: #eee;
+}
+.market-info {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.coins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+  gap: 16px;
+}
+.coin-card {
+  background: #2a2d3a;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform .1s, box-shadow .1s;
+}
+.coin-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+.coin-icon { width:28px; height:28px; margin-bottom:6px; }
+.coin-name { font-size:14px; font-weight:500; }
+.coin-price { color:#6f6; font-size:16px; margin:4px 0; }
+.coin-change.pos { color:#6f6; }
+.coin-change.neg { color:#f66; }
+
+/* modal */
+.modal-backdrop {
+  position: fixed; top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.7);
+  display: flex; align-items:center; justify-content:center;
+  z-index:1000;
+}
+.modal {
+  background: #1f2230;
+  border-radius: 8px;
+  padding: 16px;
+  width: 80%; max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+  position: relative;
+}
+.modal-close {
+  position: absolute; top:8px; right:8px;
+  background: transparent; border:none; color:#888;
+  font-size:24px; cursor:pointer;
+}
+.error { color: tomato; padding:20px; }
+.loading { padding:20px; }

@@ -1,0 +1,61 @@
+/* src/components/WithdrawModal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.withdraw-modal {
+  background: #2a2d3a;
+  padding: 24px;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  color: #fff;
+}
+.withdraw-modal h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.withdraw-modal label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #ccc;
+}
+.withdraw-modal input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 4px;
+}
+.modal-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-primary {
+  background: #4caf50;
+  color: #fff;
+}
+.btn-primary:disabled {
+  background: #3c5a3c;
+  cursor: not-allowed;
+}

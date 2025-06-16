@@ -1,0 +1,54 @@
+.swap-page {
+  background: none;
+}
+.swap-page h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.swap-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #25273c;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.field label {
+  color: #c0c0c0;
+  margin-bottom: 0.5rem;
+}
+.field select,
+.field input {
+  background: #1f2029;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: #fff;
+  min-width: 150px;
+}
+.arrow {
+  font-size: 1.5rem;
+  color: #55ff99;
+  margin-bottom: 0.5rem;
+}
+.swap-button {
+  margin-left: auto;
+  background: #55ff99;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  color: #1f2029;
+  cursor: pointer;
+}
+.rate-info {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  color: #c0c0c0;
+}

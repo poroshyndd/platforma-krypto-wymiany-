@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logoutBtn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.section {
+  margin-top: 24px;
+}
+.balance {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

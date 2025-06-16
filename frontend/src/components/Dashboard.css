@@ -1,0 +1,35 @@
+/* src/components/Dashboard.css */
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background: #1e1e2f; /* тёмный фон */
+  color: #fff;
+}
+
+.dashboard__sidebar {
+  width: 80px;            /* узкая вертикальная панель */
+  background: #151524;
+  border-right: 1px solid #2a2a3d;
+}
+
+.dashboard__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__topbar {
+  height: 60px;
+  background: #27273f;
+  border-bottom: 1px solid #2a2a3d;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.dashboard__content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}

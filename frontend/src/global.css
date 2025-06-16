@@ -1,0 +1,12 @@
+html, body, #root {
+  margin:0; padding:0; height:100%;
+}
+body {
+  background:#1e202e;
+  color:#ddd;
+  font-family:sans-serif;
+}
+/* кастом скролл */
+::-webkit-scrollbar       { width:8px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:#2a2d3a; border-radius:4px; }

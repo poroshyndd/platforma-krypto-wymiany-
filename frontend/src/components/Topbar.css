@@ -1,0 +1,36 @@
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #1b1d2a;
+  padding: 10px 20px;
+}
+
+.balance {
+  color: #fff;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn.green {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.btn.red {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}

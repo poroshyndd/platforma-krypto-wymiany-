@@ -1,0 +1,2 @@
+# nazwa_projektu_55664_Poroshyn
+platforma-wymiany-kryptowalut
