@@ -47,3 +47,8 @@ Przechowywanie tokenów JWT
 Szyfrowanie danych
 
 Ochrona API za pomocą middleware
+
+
+
+
+➡️ [prezentacja (PDF)](./docs/prezentacja.pdf)
