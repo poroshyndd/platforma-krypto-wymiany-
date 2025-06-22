@@ -1,18 +1,13 @@
-// backend/src/controllers/ratesController.js
-const fetch = require('node-fetch'); // либо axios, если вы предпочитаете
+const fetch = require('node-fetch');
 
-// 1) Возвращает массив всех фиатных курсов (NBP API)
-//    GET /rates/all
 exports.getAll = async (req, res) => {
   try {
-    // базовый список валют
     const currencies = [
       'USD','EUR','GBP','CHF','CAD','AUD','JPY',
       'CNY','SEK','NOK','DKK','CZK','HUF','RON',
       'BGN','TRY','INR','BRL','ZAR'
     ];
 
-    // для каждой валюты делаем запрос к NBP
     const promises = currencies.map(code =>
       fetch(`http://api.nbp.pl/api/exchangerates/rates/A/${code}?format=json`)
         .then(r => {
@@ -33,8 +28,6 @@ exports.getAll = async (req, res) => {
   }
 };
 
-// 2) Возвращает курс одной валюты по коду из params
-//    GET /rates/:currency
 exports.getRate = async (req, res) => {
   const { currency } = req.params;
   try {
@@ -52,11 +45,9 @@ exports.getRate = async (req, res) => {
   }
 };
 
-// 3) Возвращает курсы криптовалют из CoinGecko
-//    GET /crypto-rates
+
 exports.getCryptoRates = async (req, res) => {
   try {
-    // список монет для примера
     const ids = ['bitcoin','ethereum','ripple','litecoin','solana','dogecoin'];
     const query = ids.join('%2C');
     const url = `https://api.coingecko.com/api/v3/simple/price?ids=${query}&vs_currencies=pln&include_24hr_change=true`;
@@ -64,7 +55,6 @@ exports.getCryptoRates = async (req, res) => {
     if (!r.ok) throw new Error('CoinGecko API error');
     const data = await r.json();
 
-    // преобразуем ответ в удобный массив
     const out = Object.entries(data).map(([id, info]) => ({
       id,
       price: info.pln,
