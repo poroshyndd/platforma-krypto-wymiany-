@@ -1,4 +1,3 @@
-// src/controllers/usersController.js
 const pool = require('../config/database');
 
 exports.getCount = async (req, res) => {
