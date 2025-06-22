@@ -2,14 +2,11 @@ const pool  = require('../config/database');
 const crypto = require('crypto');
 const { getOAuthToken } = require('../services/payuService');
 
-// 1) Создание платежа (PayU)
 exports.createPayment = async (req, res, next) => {
   try {
     const userId = req.user.id;
     const { amount, currency, description } = req.body;
 
-    // Здесь ваш код создания заказа через PayU...
-    // Например:
     const token       = await getOAuthToken();
     const totalAmount = String(Math.floor(amount * 100));
     const extOrderId  = `user${userId}_${Date.now()}`;
@@ -54,7 +51,6 @@ exports.createPayment = async (req, res, next) => {
       return res.status(500).json({ error: 'PayU createOrder failed' });
     }
 
-    // Сохраняем у себя в БД запись о заказе, если нужно
     await pool.query(
       `INSERT INTO payments (user_id, ext_order_id, amount, currency, status)
        VALUES ($1,$2,$3,$4,$5)`,
@@ -67,24 +63,19 @@ exports.createPayment = async (req, res, next) => {
   }
 };
 
-// 2) Проверка статуса платежа
 exports.getPaymentStatus = async (req, res, next) => {
   try {
-    const { id } = req.params;        // здесь id — extOrderId или ваш внутренний id
-    // ...
+    const { id } = req.params;      
     res.json({ status: 'completed' });
   } catch (err) {
     next(err);
   }
 };
 
-// 3) Webhook от PayU
 exports.webhook = async (req, res) => {
-  // Обработка уведомления PayU и обновление статуса в БД
   res.sendStatus(200);
 };
 
-// 4) История платежей пользователя
 exports.getHistory = async (req, res) => {
   try {
     const userId = req.user.id;
