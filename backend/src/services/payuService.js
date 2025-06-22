@@ -1,4 +1,3 @@
-// backend/src/services/payuService.js
 require('dotenv').config();
 const fetch  = require('node-fetch');
 const qs     = require('qs');
@@ -60,7 +59,7 @@ async function createOrder({
   extOrderId, notifyUrl, continueUrl, buyerEmail
 }) {
   const token       = await getOAuthToken();
-  const totalAmount = String(Math.round(amount * 100)); // PLN → grosze
+  const totalAmount = String(Math.round(amount * 100)); 
   const signature   = crypto
     .createHash('md5')
     .update([PAYU_POS_ID, extOrderId, totalAmount, currency, PAYU_MD5_KEY].join('|'))
@@ -90,14 +89,12 @@ async function createOrder({
     redirect: 'manual'
   });
 
-  // PayU может вернуть 201 или 302 с Location
   if (!resp.ok && resp.status !== 302) {
     const txt = await resp.text();
     console.error('← [PayU] createOrder failed:', resp.status, txt);
     throw new Error(`PayU createOrder error ${resp.status}`);
   }
 
-  // В JSON-ответе или в заголовке Location лежит redirectUri
   let data = {};
   try { data = await resp.json() } catch {}
   const redirectUri = data.redirectUri || resp.headers.get('location');
