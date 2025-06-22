@@ -1,4 +1,3 @@
-// src/middlewares/authMiddleware.js
 const jwt  = require('jsonwebtoken');
 const pool = require('../config/database');
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -12,7 +11,6 @@ module.exports = async (req, res, next) => {
 
   try {
     const payload = jwt.verify(token, JWT_SECRET);
-    // payload = { user_id, roles, iat, exp }
     const { rows } = await pool.query(
       `SELECT id, email, roles, created_at
        FROM users WHERE id = $1`,
