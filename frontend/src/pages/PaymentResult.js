@@ -8,7 +8,7 @@ export default function PaymentResult() {
     <div>
       <h1>Wynik płatności</h1>
       <p>Dziękujemy, Twoja płatność została przyjęta!</p>
-      <a href="/">← Назад на главную</a>
+      <a href="/"← Powrót do strony głównej</a>
     </div>
   );
 }
